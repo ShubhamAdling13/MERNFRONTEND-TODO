@@ -59,7 +59,7 @@ const Register=()=>{
                <ToastContainer/>
                  <h1>Register</h1>
                  <form onSubmit={handleRegister}>
-                 <label htmlFor="email">Username</label>
+                 <label htmlFor="email">Email</label>
                  <input type="email" name="email"  onChange={handlesubmit} required />
                  <label htmlFor="password">Password</label>
                  <input type="password" name="password" onChange={handlesubmit}  required/>
