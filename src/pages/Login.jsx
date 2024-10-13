@@ -3,6 +3,9 @@ import axios from 'axios';
 import "./Login.css";
 import {useNavigate} from 'react-router-dom'
 import { apiurl } from '../api/api';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // import { apiurl } from '../api/api';
 const Login =()=>{
     // const [isLoggedIn, setIsLoggedIn] = useState(false);  // Track login state
@@ -33,14 +36,17 @@ const Login =()=>{
         
         console.log(result.data);
         if(result.data.message==="login successful"){
-             alert("login successful");
+            //  alert("login successful");
+              toast.success("Login Successful");
         }
         if(result.data.message==="wrong password"){
-            alert("wrong password");
+             toast.error("wrong password");
+            // alert("wrong password");
 
         }
         if(result.data.message==="user not registered"){
-            alert("user not registered");
+            toast.error("user not registered");
+            // alert("user not registered");
         }
 
             }
@@ -60,7 +66,7 @@ const Login =()=>{
     return(<div className='loginPage'>
               
            <div className='login_container'> 
-
+       <ToastContainer/>
               <h1>Login</h1>
               <form onSubmit={handleSend}>
               <label htmlFor="email">Username</label>

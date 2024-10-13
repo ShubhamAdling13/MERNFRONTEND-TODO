@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useState } from "react"
-import { apiurl } from "../api/api";
+
 import "./Register.css"
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import { apiurl } from "../api/api";
 
 const Register=()=>{
 
@@ -34,8 +36,12 @@ const Register=()=>{
         });
         console.log(result.data.message);
         if(result.data.message==="User registered successfully"){
-             navigate('/');
-        }
+            toast.success("registered successfully");
+            setTimeout(()=>{
+                navigate('/');
+        } ,3000 ) ;
+            };
+            
         
        } catch (error) {
         
@@ -50,7 +56,7 @@ const Register=()=>{
     
               
               <div className='register_container'> 
-   
+               <ToastContainer/>
                  <h1>Register</h1>
                  <form onSubmit={handleRegister}>
                  <label htmlFor="email">Username</label>
