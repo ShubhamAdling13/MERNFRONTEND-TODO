@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // import { apiurl } from '../api/api';
 const Login =()=>{
+   
+
     // const [isLoggedIn, setIsLoggedIn] = useState(false);  // Track login state
    const navigate =useNavigate();
     const [userInfo,setInfo] = useState( { 
@@ -19,7 +21,7 @@ const Login =()=>{
 
    const handlesubmit=(e)=>{
        const {name, value}= e.target;
-
+       console.log(process.env.REACT_APP_API_URL);
        setInfo((prevInfo)=>({
            ...prevInfo,
            [name]:value
