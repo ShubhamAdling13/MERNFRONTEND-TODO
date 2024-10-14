@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
 import "./Login.css";
 import {useNavigate} from 'react-router-dom'
@@ -36,16 +36,24 @@ const Login =()=>{
         
         console.log(result.data);
         if(result.data.message==="login successful"){
+            toast("Login Successful",{position:'bottom-center'});
             //  alert("login successful");
-              toast.success("Login Successful");
+            localStorage.setItem('token', result.data.token); 
+
+            setTimeout(()=>{
+                navigate('/home');
+            },2000);
+            
+            
+             
         }
         if(result.data.message==="wrong password"){
-             toast.error("wrong password");
+             toast.error("wrong password",{position:'bottom-center'});
             // alert("wrong password");
 
         }
         if(result.data.message==="user not registered"){
-            toast.error("user not registered");
+            toast.error("user not registered",{position:'bottom-center'});
             // alert("user not registered");
         }
 
@@ -64,19 +72,21 @@ const Login =()=>{
 
 
     return(<div className='loginPage'>
-              
+             
            <div className='login_container'> 
-       <ToastContainer/>
+           <ToastContainer/>
               <h1>Login</h1>
               <form onSubmit={handleSend}>
               <label htmlFor="email">Username</label>
               <input type="email" name="email"  onChange={handlesubmit} required />
               <label htmlFor="password">Password</label>
               <input type="password" name="password" onChange={handlesubmit}  required/>
+             
               <button  type='submit'>Login</button>
+             
               </form>
              {/* <a href='https://www.gogle.com'> Forget your password ?</a> */}
-              <span onClick={()=>{navigate('/register')}}>Register</span>
+              <button className='register_btn' onClick={()=>{navigate('/register')}}>Register</button>
               </div>
 
 
