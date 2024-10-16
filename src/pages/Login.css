@@ -6,25 +6,28 @@
   height: 100vh;
   border: 1px solid black;
   background-image: url('../../public/asset/home1.jpg');
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
 .login_container {
   display: flex;
   flex-direction: column;
   border: 1px inset rgb(255, 238, 238);
-  width: 500px; /* Default width for larger screens */
+  width: 500px; 
   gap: 15px;
   justify-content: center;
   align-items: center;
-  margin-left: 200px; /* Default margin for larger screens */
+  margin-left: 200px; 
   padding: 2%;
-  background: rgba(255, 255, 255, 0.1); /* Light transparent background */
-  backdrop-filter: blur(10px); /* Apply blur to create frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  background: rgba(255, 255, 255, 0.521); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
   border-radius: 5px;
+  color:rgb(0, 0, 0);
+  
+  background:linear-gradient(45deg,rgb(240, 255, 240),rgb(242, 255, 240),rgb(255, 253, 238));
 }
 
 /* Style the labels */
@@ -46,6 +49,7 @@
 }
 
 .login_container button {
+  margin: 0;
   width: 100%;
   padding: 0;
   background-color: #77b8fd;
@@ -60,7 +64,8 @@
 .login_container .register_btn {
   background-color: rgb(0, 0, 0);
   color: white;
-  max-width: 290px;
+  width: 60%;
+  margin: 0;
 }
 
 /* Style the form */

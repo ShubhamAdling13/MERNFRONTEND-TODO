@@ -58,14 +58,16 @@ const Register=()=>{
               <div className='register_container'> 
                <ToastContainer/>
                  <h1>Register</h1>
-                 <form onSubmit={handleRegister}>
+                  <form onSubmit={handleRegister}>
+                  <div>
                  <label htmlFor="email">Email</label>
                  <input type="email" name="email"  onChange={handlesubmit} required />
                  <label htmlFor="password">Password</label>
                  <input type="password" name="password" onChange={handlesubmit}  required/>
-                 <button  type='submit'>Register</button>
+                <div><button  type='submit'>Register</button> </div> 
+                </div>
                  </form>
-
+                 
            </div>
 
     </div>)

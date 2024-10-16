@@ -74,5 +74,8 @@
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     flex-wrap: wrap;
+    /* width: 1600px; */
+    height: 100vh;
+    /* border:2px solid red; */
 
   }

@@ -52,7 +52,7 @@ const Home =()=> {
    
 
   return (<div className="homepage"> 
-
+      <div className="homepage_container">
     <ToastContainer/>
     {error && <p>{error}</p>}
  { notes.map((item) => (
@@ -65,7 +65,7 @@ const Home =()=> {
     </div>
  
   ) ) }
-  
+   </div>
   </div>);
 }
 
