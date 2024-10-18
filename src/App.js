@@ -8,6 +8,7 @@ import AddNote from './pages/AddNote';
 import PrivateRoute from './pages/PrivateRoute';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import EditNote from './pages/EditNote';
 
 function App() {
   
@@ -25,7 +26,7 @@ function App() {
 
   <Route path='/home' element={<PrivateRoute element={Home}/>}> </Route>
    <Route path='/home/addNote' element={<PrivateRoute element={AddNote}/>}></Route>    
-       
+     <Route path='/home/edit/:id' element={<PrivateRoute element={EditNote}/>}></Route>  
        
        </Routes>
        

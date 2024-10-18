@@ -5,13 +5,14 @@ import "./Home.css"
 import { apiurl } from "../api/api";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Home =()=> {
          
 
     const [notes, setNotes] = useState([]);
     const [error, setError] = useState(null);
-    
+    const navigate = useNavigate();
  
     useEffect(() => {
         const fetchNotes = async () => {
@@ -49,6 +50,13 @@ const Home =()=> {
 
     }
 
+    const handleUpdate =async(key)=>{
+
+               navigate(`/home/edit/${key}`);
+         
+
+    }
+
    
 
   return (<div className="homepage"> 
@@ -61,6 +69,7 @@ const Home =()=> {
     <div className="note" key={item._id}>
       <h1>{item.title}</h1>
       <p>{item.content}</p>
+      <p><button onClick={()=>{handleUpdate(item._id)}}>Edit</button></p>
       <p> <button onClick={()=>{handleDelete(item._id)}}>  Delete  </button>  </p>
     </div>
  
